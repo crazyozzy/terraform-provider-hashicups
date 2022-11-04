@@ -15,6 +15,14 @@ module "psl" {
   coffee_name = "Packer Spiced Latte"
 }
 
+data "hashicups_order" "order" {
+  id = 3
+}
+
+output "order" {
+  value = data.hashicups_order.order
+}
+
 output "psl" {
   value = module.psl.coffee
 }
